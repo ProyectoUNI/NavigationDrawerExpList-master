@@ -63,7 +63,7 @@
                 android:src="@android:drawable/arrow_down_float"
                 android:contentDescription="@string/not_available_text"
                 android:visibility="visible"
-                android:background="#ff67ff"/>
+                android:background="#000000"/>
         </TableLayout>
     </TableRow>
 </TableLayout>
