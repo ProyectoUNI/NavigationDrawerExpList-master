@@ -114,7 +114,7 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
-        mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+      /*  mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 int grup_pos = (int)adapter.getGroupId(groupPosition);
@@ -166,7 +166,7 @@ public class MainActivity extends ActionBarActivity {
                 mDrawerLayout.closeDrawer(mDrawerExpandableList);
                 return false;
             }
-        });
+        });*/
 
         if (savedInstanceState == null) {
             displayView(0);
@@ -179,33 +179,55 @@ public class MainActivity extends ActionBarActivity {
         grupos = new ArrayList<String>();
         datosGrupos = new HashMap<String, List<String>>();
 
-        grupos.add("Grupo 1");
-        grupos.add("Grupo 2");
-        grupos.add("Grupo 3");
-        grupos.add("Grupo 4");
+        grupos.add("Inicio");
+        grupos.add("Clases");
+        grupos.add("Examen");
+        grupos.add("Juegos Educativos");
+        grupos.add("Multimedia");
+        grupos.add("Ley");
+        grupos.add("Usuarios");
 
-        List<String> hijos_grupo1 = new ArrayList<String>();
-        hijos_grupo1.add("Hijo 1 de grupo 1");
-        hijos_grupo1.add("Hijo 2 de grupo 1");
+      //  List<String> hijos_grupo1 = new ArrayList<String>();
+        //  hijos_grupo1.add("Hijo 1 de grupo 1");
+        // hijos_grupo1.add("Hijo 2 de grupo 1");
 
-        List<String> hijos_grupo2 = new ArrayList<String>();
-        hijos_grupo2.add("Hijo 1 de grupo 2");
-        hijos_grupo2.add("Hijo 2 de grupo 2");
-        hijos_grupo2.add("Hijo 3 de grupo 2");
+        List<String> MenuInicio  = new ArrayList<String>();
 
-        List<String> hijos_grupo3 = new ArrayList<String>();
-        hijos_grupo3.add("Hijo 1 de grupo 3");
+        List<String> MenuClases = new ArrayList<String>();
+        MenuClases.add("Basico");
+        MenuClases.add("Intermedio");
+        MenuClases.add("Avanzado");
 
-        List<String> hijos_grupo4 = new ArrayList<String>();
-        hijos_grupo4.add("Hijo 1 de grupo 4");
-        hijos_grupo4.add("Hijo 2 de grupo 4");
-        hijos_grupo4.add("Hijo 3 de grupo 4");
-        hijos_grupo4.add("Hijo 4 de grupo 4");
+        List<String> MenuExamenes = new ArrayList<String>();
+        MenuExamenes.add("Basico");
+        MenuExamenes.add("Intermedio");
+        MenuExamenes.add("Avanzado");
 
-        datosGrupos.put(grupos.get(0), hijos_grupo1);
-        datosGrupos.put(grupos.get(1), hijos_grupo2);
-        datosGrupos.put(grupos.get(2), hijos_grupo3);
-        datosGrupos.put(grupos.get(3), hijos_grupo4);
+        List<String> MenuJuegos = new ArrayList<String>();
+        MenuJuegos.add("Trivia");
+        MenuJuegos.add("Respetar las Señales");
+        MenuJuegos.add("Imagen Correcta");
+        MenuJuegos.add("Semaforo");
+
+        List<String> MenuMultimedia = new ArrayList<>();
+        MenuMultimedia.add("Video");
+        MenuMultimedia.add("Animaciones");
+        MenuMultimedia.add("Audio");
+        MenuMultimedia.add("Galeria");
+
+        List<String> MenuLey = new ArrayList<String>();
+
+        List<String> MenuUsuarios = new ArrayList<String>();
+
+       // datosGrupos.put(grupos.get(0), hijos_grupo1);
+        datosGrupos.put(grupos.get(0),MenuInicio);
+        datosGrupos.put(grupos.get(1), MenuClases);
+        datosGrupos.put(grupos.get(2), MenuExamenes);
+        datosGrupos.put(grupos.get(3),MenuJuegos);
+        datosGrupos.put(grupos.get(4), MenuMultimedia);
+        datosGrupos.put(grupos.get(5), MenuLey);
+        datosGrupos.put(grupos.get(6), MenuUsuarios);
+
 
         adapter = new MyAdapter(this, grupos, datosGrupos);
         mDrawerExpandableList.setAdapter(adapter);

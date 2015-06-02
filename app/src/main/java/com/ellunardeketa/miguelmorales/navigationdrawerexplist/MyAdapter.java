@@ -74,25 +74,29 @@ public class MyAdapter extends BaseExpandableListAdapter{
             convertView = inflater.inflate(R.layout.fila_grupo, null);
         }
         if (groupPosition == 0) {
-            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.mipmap.ic_launcher);
-            ((TextView) convertView.findViewById(R.id.text2)).setText("Descripción grupo 1");
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.inicio);
         } else if (groupPosition == 1) {
-            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.mipmap.ic_launcher);
-            ((TextView) convertView.findViewById(R.id.text2)).setText("Descripción grupo 2");
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.clases);
         } else if (groupPosition == 2) {
-            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.mipmap.ic_launcher);
-            ((TextView) convertView.findViewById(R.id.text2)).setText("Descripción grupo 3");
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.examenes);
         } else if (groupPosition == 3) {
-            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.mipmap.ic_launcher);
-            ((TextView) convertView.findViewById(R.id.text2)).setText("Descripción grupo 4");
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.juegos);
+        } else if (groupPosition == 4) {
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.multimedia);
+        }else if (groupPosition == 5) {
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.ley);
+        }else if (groupPosition == 6) {
+            ((ImageView) convertView.findViewById(R.id.image2)).setImageResource(R.drawable.usuario);
         }
+
 
         TextView b = (TextView) convertView.findViewById(R.id.text1);
 
         int valor = 0;
         valor = this._datosGrupos.get(this._grupos.get(groupPosition)).size();//Asignamos el nº de elementos que hay en cada grupo
         b.setTypeface(null, Typeface.BOLD);
-        b.setText(headerTitle + " (" + Integer.toString(valor) + ")");//Método de la clase Integer
+        b.setText(headerTitle);
+       // b.setText(headerTitle + " (" + Integer.toString(valor) + ")");//Método de la clase Integer
         //b.setText(headerTitle + " (" + String.valueOf(valor) + ")");//Método de la clase String con misma función
 
         image = (ImageView) convertView.findViewById(R.id.expandableIcon);
